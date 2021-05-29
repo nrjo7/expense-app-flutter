@@ -7,8 +7,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  String titleInput;
-  String amountInput;
+
   final List<Transaction> transactions = [
     Transaction(
       id: 't1',
@@ -23,6 +22,10 @@ class MyApp extends StatelessWidget {
       date: DateTime.now(),
     )
   ];
+  //String titleInput;
+  //String amountInput;
+  final titleController=TextEditingController();
+  final amountController=TextEditingController();
   @override
   Widget build(BuildContext conext) {
     return MaterialApp(
@@ -51,12 +54,11 @@ class MyApp extends StatelessWidget {
                         children: <Widget>[
                           TextField(
                               decoration: InputDecoration(labelText: 'Title'),
-                              onChanged: (val) {
-                                titleInput = val;
-                              }),
+                              controller:titleController,
+                              ),
                           TextField(
                             decoration: InputDecoration(labelText: 'Amount'),
-                            onChanged: (val) => amountInput = val,
+                            controller:amountController,
                           ),
                           TextButton(
                               style: ButtonStyle(
@@ -64,8 +66,8 @@ class MyApp extends StatelessWidget {
                                       MaterialStateProperty.all(Colors.purple)),
                               child: Text('Add Transaction'),
                               onPressed: () {
-                                print(titleInput);
-                                print(amountInput);
+                                print(titleController.text);
+                                print(amountController.text);
                               }),
                         ]),
                   ),
