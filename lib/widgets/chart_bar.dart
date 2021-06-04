@@ -8,7 +8,7 @@ class ChartBar extends StatelessWidget {
   ChartBar(this.label, this.spendingAmount, this.spendingPctOfTotal);
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
-      FittedBox(child:Text('\$${spendingAmount.toStringAsFixed(0)}')),
+      Container(height:20,child:FittedBox(child:Text('\$${spendingAmount.toStringAsFixed(0)}'))),
       SizedBox(height: 10),
       Container(
         height: 60,

@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
     //   title: 'New Shoe',
     //   amount: 50.29,
     //   date: DateTime.now(),
-    //)
+    // )
   ];
   List <Transaction>get _recentTransactions{
     return _userTransactions.where((tx){
